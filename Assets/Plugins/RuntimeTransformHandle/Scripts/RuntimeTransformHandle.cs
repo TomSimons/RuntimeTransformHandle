@@ -225,10 +225,10 @@ namespace RuntimeHandle
 
         public void SetTarget(GameObject newTarget)
         {
-            target = newTarget.transform;
-
-            if (target == null)
+            if (newTarget == null)
                 target = transform;
+            else
+                target = newTarget.transform;
 
             if (disableWhenNoTarget && target == transform)
                 gameObject.SetActive(false);
